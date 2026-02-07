@@ -21,6 +21,7 @@ from graphrag_llm.utils.gather_completion_response import (
     gather_completion_response,
     gather_completion_response_async,
 )
+from graphrag_llm.utils.json_utils import safe_json_loads
 from graphrag_llm.utils.structure_response import (
     structure_completion_response,
 )
@@ -36,5 +37,6 @@ __all__ = [
     "create_embedding_response",
     "gather_completion_response",
     "gather_completion_response_async",
+    "safe_json_loads",
     "structure_completion_response",
 ]

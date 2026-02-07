@@ -11,6 +11,8 @@ from openai import pydantic_function_tool
 from pydantic import BaseModel
 from typing_extensions import TypedDict
 
+from graphrag_llm.utils.json_utils import safe_json_loads
+
 if TYPE_CHECKING:
     from graphrag_llm.types import LLMCompletionFunctionToolParam, LLMCompletionResponse
 
@@ -123,7 +125,7 @@ class FunctionToolManager:
             function = tool_def["function"]
 
             try:
-                parsed_args_dict = json.loads(function_args)
+                parsed_args_dict = safe_json_loads(function_args)
                 input_model_instance = input_model(**parsed_args_dict)
             except Exception as e:
                 msg = f"Failed to parse arguments for function '{function_name}': {e}"

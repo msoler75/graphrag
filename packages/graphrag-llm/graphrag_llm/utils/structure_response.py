@@ -3,10 +3,11 @@
 
 """Structure response as pydantic base model."""
 
-import json
 from typing import Any, TypeVar
 
 from pydantic import BaseModel
+
+from graphrag_llm.utils.json_utils import safe_json_loads
 
 T = TypeVar("T", bound=BaseModel, covariant=True)
 
@@ -25,5 +26,5 @@ def structure_completion_response(response: str, model: type[T]) -> T:
     -------
         The structured response as a pydantic base model.
     """
-    parsed_dict: dict[str, Any] = json.loads(response)
+    parsed_dict: dict[str, Any] = safe_json_loads(response)
     return model(**parsed_dict)

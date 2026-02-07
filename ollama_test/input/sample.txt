@@ -1,0 +1,16 @@
+
+    GraphRAG is a powerful tool for analyzing text data using graph-based methods.
+    It combines large language models with graph algorithms to extract insights from documents.
+
+    Microsoft developed GraphRAG to help researchers and analysts understand complex datasets.
+    The system can identify entities, relationships, and communities within text corpora.
+
+    Key features include:
+    - Entity extraction from unstructured text
+    - Relationship identification between entities
+    - Community detection in knowledge graphs
+    - Global and local search capabilities
+
+    GraphRAG supports various LLM providers including OpenAI, Azure OpenAI, and local models via Ollama.
+    This makes it flexible for different deployment scenarios and cost considerations.
+    
